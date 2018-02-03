@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta charset="utf-8">
     
     <title>Geometry of Image Formation | 甜甜的程序屋</title>
     
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://rebeccasweetie.github.io/2018/02/03/Geometry-of-Image-Formation/index.html">
 <meta property="og:site_name" content="甜甜的程序屋">
 <meta property="og:description" content="一、相机成像原理$${1\over f}={1\over a}+{1\over b}$$ $${Y\over a}={y\over b}$$  物距越大，像越小（$Y,b$不变，$a$越大$y$越小） 像距越大，像越大（$Y,a$不变，$b$越大$y$越大）二、单视角几何规律：真实世界里的平行线在成像平面上为灭影线，相交于灭点；反之，成像为平行线，真实世界中为以焦距为灭点的灭影线应用：利用真实世界">
-<meta property="og:updated_time" content="2018-02-03T14:40:14.427Z">
+<meta property="og:updated_time" content="2018-02-03T15:08:24.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Geometry of Image Formation">
 <meta name="twitter:description" content="一、相机成像原理$${1\over f}={1\over a}+{1\over b}$$ $${Y\over a}={y\over b}$$  物距越大，像越小（$Y,b$不变，$a$越大$y$越小） 像距越大，像越大（$Y,a$不变，$b$越大$y$越大）二、单视角几何规律：真实世界里的平行线在成像平面上为灭影线，相交于灭点；反之，成像为平行线，真实世界中为以焦距为灭点的灭影线应用：利用真实世界">
@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+    <div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -270,9 +270,7 @@
 <li>主点：光学中心$(O_c,O_r)$<br>（主点是图像上与光心对齐的地方，安装精确的情况下主点在图像中心处，不精确时要通过标定确定主点位置）</li>
 </ul>
 <h4 id="变换公式："><a href="#变换公式：" class="headerlink" title="变换公式："></a>变换公式：</h4><ol>
-<li><p>基本公式</p>
-<pre><code>主点移到像素坐标原点：通过平移实现
-</code></pre><p> （理解：公式左右分别用像素坐标和图像坐标计算该点到主点的距离是多少像素）</p>
+<li><p>基本公式<br>主点移到像素坐标原点：通过平移实现<br> （理解：公式左右分别用像素坐标和图像坐标计算该点到主点的距离是多少像素）</p>
 <p> $$(u-O_c)={x\over s_x}$$$$(v-O_r)={y\over s_y}$$</p>
 <ul>
 <li>$u,v$为该点的像素坐标，单位是像素</li>
@@ -290,7 +288,8 @@
 <li>$s$是倾斜因子，描述实际成像平面相对于理想成像平面的不平行程度（由于光轴倾斜导致）</li>
 </ul>
 <hr>
-<h3 id="总结：相机投影过程"><a href="#总结：相机投影过程" class="headerlink" title="总结：相机投影过程"></a>总结：相机投影过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: start</span><br><span class="line">op1=&gt;operation: 相机坐标</span><br><span class="line">op2=&gt;operation: 图像坐标</span><br><span class="line">op3=&gt;operation: 像素坐标</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op1-&gt;op2-&gt;op3-&gt;e</span><br></pre></td></tr></table></figure>
+<h3 id="总结：相机投影过程"><a href="#总结：相机投影过程" class="headerlink" title="总结：相机投影过程"></a>总结：相机投影过程</h3><div id="flowchart-0" class="flow-chart"></div>
+
 <p>$$Z\left[\begin{matrix}u\\\\v\\\\1\\\\\end{matrix}\right]=<br>\left[\begin{matrix}\alpha_x,s,P_x\\\\0,\alpha_y,P_y\\\\0,0,1\\\\\end{matrix}\right]PX_c$$$$=\left[\begin{matrix}{\alpha}_x,s,P_x\\\\0,\alpha_y,P_y\\\\0,0,1\\\\\end{matrix}\right]<br>\left[\begin{matrix}f,0,0,0\\\\0,f,0,0\\\\0,0,f,0\\\\\end{matrix}\right]<br>\left[\begin{matrix}X_c\\\\Y_c\\\\Z_c\\\\1\\\\\end{matrix}\right]<br>$$$$=\left[\begin{matrix}{\alpha}_xf,sf,P_x\\\\0,\alpha_yf,P_y\\\\0,0,1\\\\\end{matrix}\right]<br>\left[\begin{matrix}I_{3\times3},0\\\\\end{matrix}\right]<br>\left[\begin{matrix}X_c\\\\Y_c\\\\Z_c\\\\1\\\\\end{matrix}\right]<br>$$$$=\left[\begin{matrix}f_x,S,P_x\\\\0,f_y,P_y\\\\0,0,1\\\\\end{matrix}\right]<br>\left[\begin{matrix}I_{3\times3},0\\\\\end{matrix}\right]<br>\left[\begin{matrix}X_c\\\\Y_c\\\\Z_c\\\\1\\\\\end{matrix}\right]$$</p>
 <p>记作：<br>$$Z\left[\begin{matrix}u\\\\v\\\\1\\\\\end{matrix}\right]=K\left[\begin{matrix}I_{3\times3},0\\\\\end{matrix}\right]<br>\left[\begin{matrix}X_c\\\\Y_c\\\\Z_c\\\\1\\\\\end{matrix}\right]$$</p>
 <ul>
@@ -349,6 +348,13 @@
 <li>Skew： $alpha_c=[0.0000]$<br>倾斜因子 $s$</li>
 <li>Distortion： $k_c=[0.070,0.015,-0.023]$<br>径向畸变参数</li>
 </ul>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: start
+op1=>operation: 相机坐标
+op2=>operation: 图像坐标
+op3=>operation: 像素坐标
+e=>end
+
+st->op1->op2->op3->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
 
         </div>
         <footer class="article-footer">
@@ -356,7 +362,7 @@
 
 
 
-    <a data-url="https://rebeccasweetie.github.io/2018/02/03/Geometry-of-Image-Formation/" data-id="cjd7gfyab00009vyz53y4z9sw" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://rebeccasweetie.github.io/2018/02/03/Geometry-of-Image-Formation/" data-id="cjd7h2s6u0000fhyzedso4jvd" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -641,23 +647,6 @@
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    </div>
 </body>
 </html>
